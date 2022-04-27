@@ -1,16 +1,25 @@
+/* PULL IN AN API THAT PULLS WEATHER GIFS */
+/* Maybe use giphy api? and query strings based on json that wheather returns */
+
 /* Grid */
 .layout {
   /* Set your own grid   */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 400px;
-  grid-column-gap: 1em;
-}
 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    
+}
+.weather { grid-area: 2 / 1 / 3 / 3; }
+.time { grid-area: 1 / 1 / 2 / 2; }
+.date { grid-area: 1 / 2 / 2 / 3; } 
 /* Widgets */
 section {
   background: lightgray;
   padding: 1em;
+  
   
   /* Relative Parent. Absolute Child */
   position: relative;
