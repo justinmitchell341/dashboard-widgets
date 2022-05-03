@@ -1,6 +1,8 @@
 /* PULL IN AN API THAT PULLS WEATHER GIFS */
 /* Maybe use giphy api? and query strings based on json that wheather returns */
-
+body{
+  background-color: darkslateblue;
+}
 /* Grid */
 .layout {
   /* Set your own grid   */
@@ -17,14 +19,19 @@
 .date { grid-area: 1 / 2 / 2 / 3; } 
 /* Widgets */
 section {
-  background: lightgray;
+ 
   padding: 1em;
   
   
   /* Relative Parent. Absolute Child */
   position: relative;
 }
-
+.gif{
+  
+  /* position: relative;
+  z-index: -4;
+  border-radius:50%; */
+}
 /* Time */
 .time {
 }
@@ -61,9 +68,13 @@ section {
 
 /* Weather */
 .weather {
-  
-}
 
+}
+.weatherData{
+  position: relative;
+  z-index: 1;
+  bottom:0; ;
+}
 .city {
   
 }
