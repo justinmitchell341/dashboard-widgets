@@ -85,3 +85,8 @@ dayOfWeek.innerText = allTheDays[gotDayOfWeek];
    const template2 = `<img class="gif" src=${giphyGif}" alt="gif">`;
    dateContainer.insertAdjacentHTML("afterbegin", template2);
  })
+const reloadButton = document.querySelector(".refresh")
+function reload(){
+  reload = location.reload();
+}
+reloadButton.addEventListener("click", reload)

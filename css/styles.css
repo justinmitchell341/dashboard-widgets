@@ -1,12 +1,13 @@
 /* PULL IN AN API THAT PULLS WEATHER GIFS */
 /* Maybe use giphy api? and query strings based on json that wheather returns */
+@import url('nippo.css');
 body{
-  background-color: darkslateblue;
+  background-color: seagreen;
 }
 /* Grid */
 .layout {
   /* Set your own grid   */
-
+  font-family: 'Nippo-Regular';
   display: grid;
   grid-template-columns: 10% repeat(3, 1fr) 10%;
   grid-template-rows: repeat(2, 1fr);
@@ -19,11 +20,11 @@ text-align: center;
 border-radius: 50%;
 height: 50vh;
 width: 25vw;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
 display: flex;
 justify-content: center;
 align-items: center;
-font-size: 1.3rem;
+font-size: 2rem;
 gap: 3rem;
 }
 .refresh{
@@ -32,7 +33,14 @@ font-size: 7rem;
 display: flex;
 justify-content: center;
 align-items: center;
-
+width: 20vw;
+height: 10vh;
+margin-top: 20vh;
+margin-left: 4vw;
+cursor: pointer;
+}
+.refresh:hover{
+  color: purple;
 }
 .date { 
   grid-area: 1 / 4 / 2 / 5;
@@ -40,7 +48,6 @@ align-items: center;
   border-radius: 50%;
   height: 50vh;
   width: 25vw;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: flex;
 justify-content: center;
 align-items: center;
@@ -53,79 +60,38 @@ gap: 3rem;
   border-radius: 50%;
   height: 50vh;
   width: 25vw;
-  justify-content: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: flex;
-justify-content: center;
 align-items: center;
 font-size: 2rem;
 }
 /* Widgets */
 section {
- background-color: rgba(17, 199, 108, 0.178);
+ background-color: rgba(5, 83, 44, 0.178);
   padding: 1em;
-  
-  
-  /* Relative Parent. Absolute Child */
-  position: relative;
+  box-shadow: rgba(30, 78, 49, 0.733) 0px 50px 100px -20px,  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .gif{
   border-radius: 50%;
   height: 30vh;
   width: 15vw;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-/* Time */
-.time {
-}
-
-.hours {
-}
-
-.minutes {
-}
-
-.seconds {
-}
-
-.amOrPM {
-  
-}
-
-/* Date */
-.date {
-  
-}
-
-.month {
-}
-
-.dayOfMonth {
-}
-
-.year {
-}
-
-.dayOfWeek {
-}
-
-/* Weather */
-.weather {
-
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .weatherData{
 display: flex;
 flex-direction: column;
 }
-.city {
-  
-}
-
-.temp {
-  
-}
-
+.timeData{
+  display: flex;
+  flex-direction: column;
+  }
+  .dateData{
+    display: flex;
+   flex-direction: column;
+   }
 .icon {
   height: 100px;
   width: 100px;
+  display: flex;
+  justify-content: center;
+  
 }

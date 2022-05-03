@@ -48,8 +48,8 @@ fetch(url)
   <div class="weatherData">
     <h1>Weather</h1>
     <data value="${data.name}" class="city">${data.name}</data>
-    <data value="${data.main.temp}" class="temp">Feels like: ${data.main.temp}&#8457;</data>
-    <data value="${data.main.feels_like}" class="tempFeel">${data.main.feels_like}&#8457;</data>
+    <data value="${data.main.temp}" class="temp"> ${data.main.temp}&#8457;</data>
+    <data value="${data.main.feels_like}" class="tempFeel">Feels like: ${data.main.feels_like}&#8457;</data>
     <img class="icon" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Placeholder">
   </div>
     `;
