@@ -16,3 +16,5 @@ The concept of a Dashboard appears nearly everywhere. Most obvious are car dashb
 
 ## Citations
 List your sources here
+https://widgetcore.com/15-most-used-css-box-shadow-examples/
+https://developers.giphy.com

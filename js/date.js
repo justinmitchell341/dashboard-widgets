@@ -31,7 +31,7 @@ Dynamic Data
 // Get and store current date and time with `new Date()` object
 const dateNow = new Date();
 // Check-Check: See all `Date()` methods and properties
-console.log( dateNow );
+
 
 const gotMonth = dateNow.getMonth();
 // Get current day of the month
@@ -42,7 +42,7 @@ const gotYear = dateNow.getFullYear();
 const gotDayOfWeek = dateNow.getDay();
 
 // Check-Check: Is the data correct? 
-console.log(gotMonth, gotDayOfMonth, gotYear, gotDayOfWeek);
+
 
 /************
 Get DOM Elements
@@ -68,3 +68,20 @@ dayOfMonth.innerText = gotDayOfMonth;
 year.innerText = gotYear;
 // Set the day of the week
 dayOfWeek.innerText = allTheDays[gotDayOfWeek];
+
+ //Giphy URL query string
+ const dateUrl = `https://api.giphy.com/v1/gifs/random?tag=${allTheDays[gotDayOfWeek]}"&api_key=oBmJ7elmwNUixmTd5HtTPNVf2nSTlsNC&rating=g&limit=`
+ console.log(dateUrl);
+ dateContainer = document.querySelector('.date')
+ fetch(dateUrl)
+ .then (response => response.json())
+ .then(data => {
+   //Checking data
+//    console.log(data)
+   // Get data of data (this was annoying to figure out)
+   const giphyGif = (data.data.images.original.url);
+   // Checking gif
+//    console.log(giphyGif)
+   const template2 = `<img class="gif" src=${giphyGif}" alt="gif">`;
+   dateContainer.insertAdjacentHTML("afterbegin", template2);
+ })

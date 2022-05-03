@@ -19,26 +19,26 @@ fetch(url)
 .then( data => {
 
   // Check-check: Is data good? 
-  console.log(data);
+  // console.log(data);
   
   // Get Container for Weather   
   const weatherContainer = document.querySelector('.weather');
   // Get Weather type
   const weatherType = (data.weather[0].main);
  // what is the weather type?
-  console.log(weatherType);
+  // console.log(weatherType);
   //Giphy URL query string
-  const giphyUrl = `https://api.giphy.com/v1/gifs/search?q=${weatherType}&api_key=oBmJ7elmwNUixmTd5HtTPNVf2nSTlsNC&rating=g&limit=`
+  const giphyUrl = `https://api.giphy.com/v1/gifs/random?tag=${weatherType}&api_key=oBmJ7elmwNUixmTd5HtTPNVf2nSTlsNC&rating=g&limit=`
   // Get data from giphy url
   fetch(giphyUrl)
   .then (response => response.json())
   .then(data => {
     //Checking data
-    console.log(data)
+    // console.log(data)
     // Get data of data (this was annoying to figure out)
-    const giphyGif = (data.data[2].images.original.url);
+    const giphyGif = (data.data.images.original.url);
     // Checking gif
-    console.log(giphyGif)
+    // console.log(giphyGif)
     const template2 = `<img class="gif" src=${giphyGif}" alt="gif">`;
     weatherContainer.insertAdjacentHTML("afterbegin", template2);
   })
@@ -48,8 +48,9 @@ fetch(url)
   <div class="weatherData">
     <h1>Weather</h1>
     <data value="${data.name}" class="city">${data.name}</data>
-    <data value="${data.main.temp}" class="temp">${data.main.temp}&#8457;</data>
-    <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Placeholder">
+    <data value="${data.main.temp}" class="temp">Feels like: ${data.main.temp}&#8457;</data>
+    <data value="${data.main.feels_like}" class="tempFeel">${data.main.feels_like}&#8457;</data>
+    <img class="icon" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Placeholder">
   </div>
     `;
   

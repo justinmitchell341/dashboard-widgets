@@ -2,6 +2,7 @@
 Dynamic Data
 ************/
 // define `theClockApp` stored in function to be ran
+
 const theClockApp = () => {
   
 // Get and store current date and time with `new Date()` object
@@ -31,7 +32,6 @@ gotHours = gotHours < 10 ? `0${gotHours}` : gotHours;
 // Optionally, append zero to single digit minutes
 gotMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes;
 // Optionally, append zero to single digit seconds
-gotSeconds = gotSeconds < 10 ? `0${gotSeconds}` : gotSeconds;
 
 /************
 Get DOM Elements
@@ -41,7 +41,6 @@ const hours = document.querySelector(".hours");
 // Get minutes
 const minutes = document.querySelector(".minutes");
 // Get seconds
-const seconds = document.querySelector(".seconds");
 // Get AM or PM
 const amOrPM = document.querySelector('.amOrPM');
 
@@ -53,7 +52,7 @@ hours.innerText = gotHours;
 // Set the minutes
 minutes.innerText = gotMinutes;
 // Set the seconds
-seconds.innerText = gotSeconds;
+
 // Set AM or PM
 amOrPM.innerText = gotAmOrPM;
   
@@ -64,3 +63,19 @@ Run App
 ************/
 // Re-run `theClockApp` every 1 second (1000 ms)
 setInterval(theClockApp, 1000);
+ //Giphy URL query string
+ const giphyUrl = `https://api.giphy.com/v1/gifs/random?tag=time&api_key=oBmJ7elmwNUixmTd5HtTPNVf2nSTlsNC&rating=g&limit=`
+ // Get data from giphy url
+ timeContainer = document.querySelector('.time')
+ fetch(giphyUrl)
+ .then (response => response.json())
+ .then(data => {
+   //Checking data
+//    console.log(data)
+   // Get data of data (this was annoying to figure out)
+   const giphyGif = (data.data.images.original.url);
+   // Checking gif
+//    console.log(giphyGif)
+   const template2 = `<img class="gif" src=${giphyGif}" alt="gif">`;
+   timeContainer.insertAdjacentHTML("afterbegin", template2);
+ })
